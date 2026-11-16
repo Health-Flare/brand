@@ -61,6 +61,39 @@ In wide formats the moment's horizon may run to the edges.
 ## App icons
 1024px masters in `app-icons/`. Compact mark at 60% of the width, centred. iOS: no transparency, no pre-rounded corners. Android adaptive: keep the mark inside the 66dp safe zone; use `*-android-monochrome` for themed icons. Below 40px use the micro mark.
 
+## Functional / status colours (v2.1, addendum)
+
+The nine colours above are the **identity system** — nav, buttons, headers, the
+mark, text. They are not enough to run a product that has to signal severity,
+success, or a destructive action at a glance, and forcing those jobs onto
+identity colours causes real problems: a "moderate symptom" chip in the same
+hue as the primary CTA reads as "tap this," and a flattened severity scale
+loses the at-a-glance legibility that's the whole point of a traffic-light
+indicator.
+
+So this is a second, separate palette for **functional UI signalling only**.
+It is deliberately exempt from "no clinical blues" and "always one colour" —
+those rules exist to protect the *mark's* identity, not to constrain status
+UI that never touches the mark. Don't use these colours for anything brand
+(nav, CTAs, headers) and don't use the identity colours for anything
+functional (severity, success, destructive) — keep the two systems visually
+non-overlapping on purpose.
+
+| Token | Hex | Job | Notes |
+|---|---|---|---|
+| `flare.clear` | `#BFCBAE` | Severity: clear / calm | Ink text, 9.9:1 |
+| `flare.mild` | `#F0D28A` | Severity: mild | Ink text, 11.5:1 |
+| `flare.moderate` | `#E8A94A` | Severity: moderate | Ink text, 8.2:1. Deliberately distinct from Sunrise/Amber — must never look like the primary CTA colour |
+| `flare.significant` | `#D1683F` | Severity: significant | Ink text, 4.6:1 |
+| `flare.severe` | `#A8402C` | Severity: severe | White text, 6.1:1 |
+| `destructive` | `#7A2E24` | Delete / irreversible actions only | White text, 9.4:1. Darker and more desaturated than `flare.severe` on purpose — a delete confirmation should not visually echo a severity flag |
+| `info` | no dedicated hue | Informational banners, links | Use Sand background / Slate icon or label / Ink text instead of a coloured banner. Info gives up its hue entirely rather than get a brand-safe substitute — if that reads as a loss of signal in practice, revisit |
+
+This scale was designed for Health Flare's 5-step symptom severity model. If
+Inner Flare (or anything else) needs a functional palette for a different
+number of steps or a different signal, extend this table — don't invent a
+third, undocumented palette per app.
+
 ## Don't
 - stretch, rotate, or add effects
 - add a colour to the horizon

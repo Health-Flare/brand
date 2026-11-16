@@ -46,6 +46,12 @@ Releases are tagged (`v2.0.0`, ...). v2.0 replaces v1.0 (the open-ring mark)
 entirely — there's no visual continuity to preserve, so don't mix v1 and v2
 assets in a consumer repo.
 
+v2.1 is additive: it introduces the "Functional / status colours" section in
+`brand-guidelines.md` (severity scale, destructive, info) as a second palette
+alongside the v2.0 identity system, for apps that need to signal severity or
+destructive actions without borrowing identity colours for the job. No marks
+or identity colours changed.
+
 ## Status
 
 These are construction-accurate drawings, not final production art. Before a

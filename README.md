@@ -52,6 +52,10 @@ alongside the v2.0 identity system, for apps that need to signal severity or
 destructive actions without borrowing identity colours for the job. No marks
 or identity colours changed.
 
+v2.2 is additive: it introduces "Profile tag colours" — a third, narrower
+palette for telling multiple profiles/avatars apart with no semantic meaning
+attached. No marks, identity, or functional colours changed.
+
 ## Status
 
 These are construction-accurate drawings, not final production art. Before a

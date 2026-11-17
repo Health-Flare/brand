@@ -94,6 +94,34 @@ Inner Flare (or anything else) needs a functional palette for a different
 number of steps or a different signal, extend this table — don't invent a
 third, undocumented palette per app.
 
+## Profile tag colours (v2.2, addendum)
+
+A third, even narrower palette: colours used ONLY to tell multiple profiles
+apart at a glance (e.g. avatar background when there's no photo — a parent
+tracking themself plus two kids needs each one visually distinct). This is
+not identity, and it is not functional/status — it carries no meaning beyond
+"a different person than that other one." Don't reuse identity or functional
+colours for this job either; a profile that happens to land on the same hue
+as "severe" or as the primary CTA creates a false association.
+
+Eight deliberately muted, deliberately earth-toned swatches, spread across
+hue so adjacent profiles are never confusable, all well clear of white-text
+contrast minimums:
+
+| Token | Hex | White-on-it |
+|---|---|---|
+| `profile.brick` | `#762D33` | 9.6:1 |
+| `profile.clay` | `#76322D` | 9.3:1 |
+| `profile.rust` | `#763D2D` | 8.5:1 |
+| `profile.cedar` | `#76492D` | 7.6:1 |
+| `profile.walnut` | `#76542D` | 6.8:1 |
+| `profile.ochre` | `#76602D` | 6.0:1 |
+| `profile.honey` | `#766B2D` | 5.4:1 |
+| `profile.olive` | `#76762D` | 4.8:1 |
+
+Assignment is deterministic (e.g. keyed off a profile id, cycling through
+the list) — not user-chosen, not meaningful, just a stable visual tag.
+
 ## Don't
 - stretch, rotate, or add effects
 - add a colour to the horizon
